@@ -88,6 +88,8 @@ new_local_repository(
     name = "mongoc_lib",
     path = "/usr/local/lib",
     build_file_content = """
-exports_files(["libmongoc-1.0.dylib","libbson-1.0.dylib"])
+exports_files([
+"libmongoc-1.0.dylib","libbson-1.0.dylib",
+"libmongoc-1.0.so", "libbson-1.0.so",])
 """,
 )

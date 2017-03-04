@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package mongo_service;
 
-import "custom_object.proto";
+import "mongo_proxy/custom_object.proto";
 
 service Mongo {
   rpc Init (DbDetails) returns (BsonError) {}
@@ -16,9 +16,9 @@ message DbDetails {
 }
 
 message BsonError {
-  int32 domain;
-  int32 code;
-  string msg = 1;
+  int32 domain = 1;
+  int32 code = 2;
+  string msg = 3;
 }
 
 message JsonStr {

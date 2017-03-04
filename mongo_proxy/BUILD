@@ -92,8 +92,8 @@ cc_binary (
     name = "mongo_proxy_server",
     srcs = [
         "mongo_proxy_server.cc",
-			  "@mongoc_lib//:libmongoc-1.0.dylib",
-			  "@mongoc_lib//:libbson-1.0.dylib",
+	"@mongoc_lib//:libmongoc-1.0.so",
+	"@mongoc_lib//:libbson-1.0.so",
     ] + libmongoc_inc,
     deps = [
         ":mongo_service",

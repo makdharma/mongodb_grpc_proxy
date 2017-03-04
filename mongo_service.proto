@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package mongo_service;
+
+import "custom_object.proto";
+
+service Mongo {
+  rpc Init (DbDetails) returns (BsonError) {}
+  rpc Insert (CustomObject) returns (BsonError) {}
+}
+
+message DbDetails {
+  string db = 1;
+  string collection = 2;
+  string server = 3;
+}
+
+message BsonError {
+  int32 domain;
+  int32 code;
+  string msg = 1;
+}
+
+message JsonStr {
+  string json = 1;
+}

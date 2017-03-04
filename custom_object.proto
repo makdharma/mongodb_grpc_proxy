@@ -1,0 +1,6 @@
+syntax = "proto3";
+
+message CustomObject {
+  string str = 1;
+  map<string, float> attr = 2;
+}
